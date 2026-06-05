@@ -1267,6 +1267,24 @@
       stroke-linecap: round
     }
 
+    .acad-thumb .lucide-icon {
+      display: none;
+    }
+
+    .acad-thumb .generic-icon {
+      display: block;
+    }
+
+    @media (min-width: 1024px) {
+      .acad-thumb .lucide-icon {
+        display: block;
+        stroke: var(--burgundy);
+      }
+      .acad-thumb .generic-icon {
+        display: none;
+      }
+    }
+
     .acad-body {}
 
     .acad-meta {
