@@ -882,7 +882,7 @@
    ABOUT
 ════════════════════════════════════ */
     #about {
-      padding: 6rem 3rem;
+      padding: 3.2rem 3rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
@@ -1014,12 +1014,12 @@
    PROJECTS — sticky scroll showcase
 ════════════════════════════════════ */
     #projects {
-      padding: 6rem 0;
+      padding: 3.2rem 0;
       transition: background .4s;
     }
 
     .projects-intro {
-      padding: 0 3rem 3rem;
+      padding: 0 3rem 1.5rem;
       display: flex;
       align-items: end;
       justify-content: space-between;
@@ -1037,7 +1037,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 3.5rem;
-      padding: 3rem 3rem 0;
+      padding: 1.5rem 3rem 0;
     }
 
     .proj-mobile {
@@ -1197,7 +1197,7 @@
    ACADEMIC WORK
 ════════════════════════════════════ */
     #academic {
-      padding: 6rem 3rem;
+      padding: 3.2rem 3rem;
       background: var(--bg-alt);
       border-top: .5px solid var(--divider);
       border-bottom: .5px solid var(--divider);
@@ -1208,7 +1208,7 @@
       display: flex;
       align-items: end;
       justify-content: space-between;
-      margin-bottom: 3rem;
+      margin-bottom: 1.5rem;
     }
 
     .academic-header .section-title {
@@ -1357,12 +1357,12 @@
    EXPERIENCE — stacked cards
 ════════════════════════════════════ */
     #experience {
-      padding: 6rem 3rem;
+      padding: 3.2rem 3rem;
       transition: background .4s;
     }
 
     .exp-header {
-      margin-bottom: 3rem
+      margin-bottom: 1.5rem
     }
 
     .exp-header .section-title {
@@ -1515,7 +1515,7 @@
    ACHIEVEMENTS — timeline + highlights
 ════════════════════════════════════ */
     #achievements {
-      padding: 6rem 3rem;
+      padding: 3.2rem 3rem;
       background: var(--bg-alt);
       border-top: .5px solid var(--divider);
       border-bottom: .5px solid var(--divider);
@@ -1523,7 +1523,7 @@
     }
 
     .ach-header {
-      margin-bottom: 3rem
+      margin-bottom: 1.5rem
     }
 
     .ach-header .section-title {
@@ -1659,7 +1659,7 @@
 
     /* certifications row */
     .certs-row {
-      margin-top: 3rem;
+      margin-top: 1.5rem;
       padding-top: 2rem;
       border-top: .5px solid var(--divider);
       transition: border-color .4s;
@@ -1705,7 +1705,7 @@
    CONTACT
 ════════════════════════════════════ */
     #contact {
-      padding: 6rem 3rem;
+      padding: 3.2rem 3rem;
       background: var(--wine);
       display: grid;
       grid-template-columns: 1fr 1.1fr;
@@ -2054,7 +2054,7 @@
       #about {
         grid-template-columns: 1fr;
         gap: 2.5rem;
-        padding: 4rem 1.5rem
+        padding: 3.2rem 1.5rem
       }
 
       .about-desc-desktop {
@@ -2080,7 +2080,7 @@
       }
 
       #projects {
-        padding: 4rem 0
+        padding: 3.2rem 0
       }
 
       .projects-intro {
@@ -2222,7 +2222,7 @@
       }
 
       #academic {
-        padding: 4rem 1.5rem;
+        padding: 3.2rem 1.5rem;
       }
 
       .academic-header {
@@ -2246,7 +2246,7 @@
       }
 
       #experience {
-        padding: 4rem 1.5rem
+        padding: 3.2rem 1.5rem
       }
 
       .exp-cards {
@@ -2259,7 +2259,7 @@
       }
 
       #achievements {
-        padding: 4rem 1.5rem
+        padding: 3.2rem 1.5rem
       }
 
       .ach-layout {
@@ -2273,7 +2273,7 @@
 
       #contact {
         grid-template-columns: 1fr;
-        padding: 4rem 1.5rem;
+        padding: 3.2rem 1.5rem;
         gap: 3rem
       }
 
