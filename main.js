@@ -48,23 +48,7 @@
     }, { threshold: .08 });
     document.querySelectorAll('.rv').forEach(el => obs.observe(el));
 
-    /* ── sticky project showcase ── */
-    const showcase = document.getElementById('projShowcase');
-    const visualItems = document.querySelectorAll('.proj-visual-item');
-    const infoPanels = document.querySelectorAll('.proj-info-panel');
-    if (showcase && visualItems.length) {
-      const projObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const pid = entry.target.dataset.project;
-            infoPanels.forEach(p => { p.classList.remove('active') });
-            const target = document.getElementById('info-' + pid);
-            if (target) target.classList.add('active');
-          }
-        });
-      }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
-      visualItems.forEach(item => projObs.observe(item));
-    }
+
 
     /* ── hero photo ── */
     (() => {
@@ -103,48 +87,45 @@
     const prevBtn = document.getElementById('carouselPrevBtn');
     const nextBtn = document.getElementById('carouselNextBtn');
     const counter = document.getElementById('carouselCounter');
-    const dots = document.querySelectorAll('.carousel-dot');
 
     if (carousel && prevBtn && nextBtn && counter) {
-      const totalSlides = dots.length;
+      const totalSlides = 4;
+
+      const getScrollStep = () => {
+        const children = carousel.children;
+        if (children.length > 1) {
+          return children[1].offsetLeft - children[0].offsetLeft;
+        }
+        return carousel.clientWidth;
+      };
 
       const updateCarousel = (index) => {
-        // Update counter
         counter.textContent = `0${index + 1} / 0${totalSlides}`;
-        
-        // Update dots
-        dots.forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === index);
-        });
-
-        // Update button disabled state
         prevBtn.disabled = index === 0;
         nextBtn.disabled = index === totalSlides - 1;
       };
 
-      // Listen for scroll events to update indicators dynamically
       let isScrolling;
       carousel.addEventListener('scroll', () => {
         window.clearTimeout(isScrolling);
         isScrolling = setTimeout(() => {
-          const width = carousel.clientWidth;
-          if (width > 0) {
-            const index = Math.round(carousel.scrollLeft / width);
+          const step = getScrollStep();
+          if (step > 0) {
+            const index = Math.round(carousel.scrollLeft / step);
             if (index >= 0 && index < totalSlides) {
               updateCarousel(index);
             }
           }
-        }, 50); // Small timeout to debounce scroll update
+        }, 50);
       }, { passive: true });
 
-      // Arrow button click handlers
       prevBtn.addEventListener('click', () => {
-        const width = carousel.clientWidth;
-        if (width > 0) {
-          const index = Math.round(carousel.scrollLeft / width);
+        const step = getScrollStep();
+        if (step > 0) {
+          const index = Math.round(carousel.scrollLeft / step);
           if (index > 0) {
             carousel.scrollTo({
-              left: (index - 1) * width,
+              left: (index - 1) * step,
               behavior: 'smooth'
             });
           }
@@ -152,34 +133,18 @@
       });
 
       nextBtn.addEventListener('click', () => {
-        const width = carousel.clientWidth;
-        if (width > 0) {
-          const index = Math.round(carousel.scrollLeft / width);
+        const step = getScrollStep();
+        if (step > 0) {
+          const index = Math.round(carousel.scrollLeft / step);
           if (index < totalSlides - 1) {
             carousel.scrollTo({
-              left: (index + 1) * width,
+              left: (index + 1) * step,
               behavior: 'smooth'
             });
           }
         }
       });
 
-      // Pagination dots click handlers
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          const width = carousel.clientWidth;
-          if (width > 0) {
-            const index = parseInt(dot.getAttribute('data-index'), 10);
-            carousel.scrollTo({
-              left: index * width,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // Initial state setup
       updateCarousel(0);
     }
-
   

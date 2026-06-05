@@ -279,21 +279,27 @@
       <span style="font-size:.72rem;color:var(--muted-lt);letter-spacing:.06em;font-family:var(--mono)">2025–2026</span>
     </div>
 
-    <!-- Desktop: sticky left + scrolling right -->
-    <div class="proj-showcase" id="projShowcase">
-
-      <!-- Sticky info column -->
-      <div class="proj-info-col" id="projInfoCol">
-
-        <!-- Panel 1 active by default -->
-        <div class="proj-info-panel active" id="info-1">
-          <div class="proj-counter">01 / 04</div>
-          <span class="section-label proj-info-label">Python · XGBoost · Streamlit · APIs</span>
-          <h3 class="proj-info-title">Multi-Hazard Disaster Risk Prediction System</h3>
-          <p class="proj-info-desc">Real-time multi-hazard prediction framework using K-Means clustering, XGBoost, and
-            Random Forest models to assess flood and heatwave risk from live meteorological data. Generates localized
-            risk classifications, environmental indicators, and decision-support alerts through an interactive Streamlit
-            dashboard.</p>
+    <!-- Responsive project card grid -->
+    <div class="projects-grid">
+      <!-- Card 1 -->
+      <div class="proj-card rv">
+        <div class="proj-screenshot">
+          <div class="ss-bar">
+            <div class="ss-dot r"></div>
+            <div class="ss-dot y"></div>
+            <div class="ss-dot g"></div>
+            <span class="ss-url">disaster-risk-prediction.streamlit.app</span>
+          </div>
+          <div class="ss-placeholder">
+            <img src="assets/disaster.png" class="proj-screenshot-img"
+              alt="Multi-Hazard Disaster Risk Prediction System Screenshot">
+          </div>
+        </div>
+        <div class="proj-card-content">
+          <span class="section-label proj-card-meta">Python · XGBoost · Streamlit · APIs</span>
+          <h3 class="proj-card-title">Multi-Hazard Disaster Risk Prediction System</h3>
+          <p class="proj-card-desc">Real-time flood and heatwave risk assessment using machine learning models and live
+            weather APIs.</p>
           <div class="proj-tags">
             <span class="mono-tag">K-Means + XGBoost</span>
             <span class="mono-tag">Random Forest</span>
@@ -309,19 +315,30 @@
               </svg>
               GitHub
             </a>
-            <a href="https://disaster-risk-prediction.streamlit.app" class="btn-outline">Live Demo</a>
+            <a href="https://disaster-risk-prediction.streamlit.app" target="_blank" class="btn-outline">Live Demo</a>
           </div>
         </div>
+      </div>
 
-        <div class="proj-info-panel" id="info-2">
-          <div class="proj-counter">02 / 04</div>
-          <span class="section-label proj-info-label">Python · TensorFlow · Flask · RAG</span>
-          <h3 class="proj-info-title">Environmental Health Risk &amp; Advisory System</h3>
-          <p class="proj-info-desc">AI-powered environmental health advisory platform that classifies hazards such as
-            garbage accumulation, stagnant water, air pollution, and unhygienic surroundings using EfficientNetB0
-            computer vision. A FAISS-backed Retrieval-Augmented Generation pipeline with locally deployed LLaMA 3.2
-            generates disease-risk assessments, preventive measures, and context-aware public health recommendations.
-          </p>
+      <!-- Card 2 -->
+      <div class="proj-card rv d1">
+        <div class="proj-screenshot">
+          <div class="ss-bar">
+            <div class="ss-dot r"></div>
+            <div class="ss-dot y"></div>
+            <div class="ss-dot g"></div>
+            <span class="ss-url">environment-health-system.local</span>
+          </div>
+          <div class="ss-placeholder">
+            <img src="assets/environment.png" class="proj-screenshot-img"
+              alt="Environmental Health Risk & Advisory System Screenshot">
+          </div>
+        </div>
+        <div class="proj-card-content">
+          <span class="section-label proj-card-meta">Python · TensorFlow · Flask · RAG</span>
+          <h3 class="proj-card-title">Environmental Health Risk &amp; Advisory System</h3>
+          <p class="proj-card-desc">CNN + RAG system for detecting disease-associated environmental hazards and
+            generating preventive health advisories.</p>
           <div class="proj-tags">
             <span class="mono-tag">EfficientNetB0</span>
             <span class="mono-tag">FAISS RAG</span>
@@ -340,21 +357,27 @@
             </a>
           </div>
         </div>
+      </div>
 
-        <div class="proj-info-panel" id="info-3">
-          <div class="proj-counter">03 / 04</div>
-          <span class="section-label proj-info-label">
-            WebSockets · FastAPI · Gemini · Cloud Run
-          </span>
-          <h3 class="proj-info-title">
-            Cortex Arena: AI Crowd Orchestration System
-          </h3>
-          <p class="proj-info-desc">
-            Built a real-time AI-powered crowd management platform for stadiums.
-            Uses live congestion monitoring, density prediction, route optimization,
-            and an AI assistant for attendee guidance. Developed during Google's
-            PromptWars competition.
-          </p>
+      <!-- Card 3 -->
+      <div class="proj-card rv d2">
+        <div class="proj-screenshot">
+          <div class="ss-bar">
+            <div class="ss-dot r"></div>
+            <div class="ss-dot y"></div>
+            <div class="ss-dot g"></div>
+            <span class="ss-url">cortex-arena.run.app</span>
+          </div>
+          <div class="ss-placeholder">
+            <img src="assets/cortex.png" class="proj-screenshot-img"
+              alt="Cortex Arena: AI Crowd Orchestration System Screenshot">
+          </div>
+        </div>
+        <div class="proj-card-content">
+          <span class="section-label proj-card-meta">WebSockets · FastAPI · Gemini · Cloud Run</span>
+          <h3 class="proj-card-title">Cortex Arena: AI Crowd Orchestration System</h3>
+          <p class="proj-card-desc">AI-powered crowd management platform with congestion monitoring, route optimization,
+            and attendee assistance.</p>
           <div class="proj-tags">
             <span class="mono-tag">FastAPI</span>
             <span class="mono-tag">WebSockets</span>
@@ -373,22 +396,27 @@
               Demo</a>
           </div>
         </div>
+      </div>
 
-        <div class="proj-info-panel" id="info-4">
-          <div class="proj-counter">04 / 04</div>
-          <span class="section-label proj-info-label">
-            Python · Gemini · Multi-Agent Systems · GCP
-          </span>
-          <h3 class="proj-info-title">
-            AidFlow: Agentic Volunteer Intelligence System
-          </h3>
-          <p class="proj-info-desc">
-            Developed a multi-agent AI system that transforms unstructured disaster
-            reports into actionable response plans. Designed agent pipelines for
-            entity extraction, emergency classification, severity assessment,
-            resource matching, and response validation. Built during Google's
-            Solution Challenge.
-          </p>
+      <!-- Card 4 -->
+      <div class="proj-card rv d3">
+        <div class="proj-screenshot">
+          <div class="ss-bar">
+            <div class="ss-dot r"></div>
+            <div class="ss-dot y"></div>
+            <div class="ss-dot g"></div>
+            <span class="ss-url">aidflow-ai.vercel.app</span>
+          </div>
+          <div class="ss-placeholder">
+            <img src="assets/aidflow.png" class="proj-screenshot-img"
+              alt="AidFlow: Agentic Volunteer Intelligence System Screenshot">
+          </div>
+        </div>
+        <div class="proj-card-content">
+          <span class="section-label proj-card-meta">Python · Gemini · Multi-Agent Systems · GCP</span>
+          <h3 class="proj-card-title">AidFlow: Agentic Volunteer Intelligence System</h3>
+          <p class="proj-card-desc">Multi-agent disaster response system that transforms reports into actionable
+            volunteer coordination plans.</p>
           <div class="proj-tags">
             <span class="mono-tag">Gemini</span>
             <span class="mono-tag">Multi-Agent AI</span>
@@ -406,106 +434,16 @@
             <a href="https://aidflow-ai.vercel.app/" target="_blank" class="btn-outline">Live Demo</a>
           </div>
         </div>
-
-      </div>
-
-      <!-- Scrolling visual column -->
-      <div class="proj-visual-col" id="projVisualCol">
-        <!-- Screenshot 1 -->
-        <div class="proj-visual-item" data-project="1">
-          <div style="width:100%">
-            <div class="proj-screenshot">
-              <div class="ss-bar">
-                <div class="ss-dot r"></div>
-                <div class="ss-dot y"></div>
-                <div class="ss-dot g"></div>
-                <span class="ss-url">disaster-risk-prediction.streamlit.app</span>
-              </div>
-              <div class="ss-placeholder">
-                <img src="assets/disaster.png" class="proj-screenshot-img"
-                  alt="Multi-Hazard Disaster Risk Prediction System Screenshot">
-              </div>
-              <div class="proj-screenshot-caption">// disaster_risk_prediction / XGBoost · OpenWeather +
-                OpenMeteo APIs</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Screenshot 2 -->
-        <div class="proj-visual-item" data-project="2">
-          <div style="width:100%">
-            <div class="proj-screenshot">
-              <div class="ss-bar">
-                <div class="ss-dot r"></div>
-                <div class="ss-dot y"></div>
-                <div class="ss-dot g"></div>
-                <span class="ss-url">environmental-health-system.local</span>
-              </div>
-              <div class="ss-placeholder">
-                <img src="assets/environment.png" class="proj-screenshot-img"
-                  alt="Environmental Health Risk & Advisory System Screenshot">
-              </div>
-              <div class="proj-screenshot-caption">// environmental_health_system / Flask + EfficientNetB0 + Llama 3.2
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Screenshot 3 -->
-        <div class="proj-visual-item" data-project="3">
-          <div style="width:100%">
-            <div class="proj-screenshot">
-              <div class="ss-bar">
-                <div class="ss-dot r"></div>
-                <div class="ss-dot y"></div>
-                <div class="ss-dot g"></div>
-                <span class="ss-url">cortex.asia-south1.run.app</span>
-              </div>
-
-              <div class="ss-placeholder">
-                <img src="assets/cortex.png" class="proj-screenshot-img"
-                  alt="Cortex Arena: AI Crowd Orchestration System Screenshot">
-              </div>
-
-              <div class="proj-screenshot-caption">
-                // cortexarena / websocket monitoring / FastAPI
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Screenshot 4 -->
-        <div class="proj-visual-item" data-project="4">
-          <div style="width:100%">
-            <div class="proj-screenshot">
-              <div class="ss-bar">
-                <div class="ss-dot r"></div>
-                <div class="ss-dot y"></div>
-                <div class="ss-dot g"></div>
-                <span class="ss-url">aidflow-ai.vercel.app</span>
-              </div>
-
-              <div class="ss-placeholder">
-                <img src="assets/aidflow.png" class="proj-screenshot-img"
-                  alt="AidFlow: Agentic Volunteer Intelligence System Screenshot">
-              </div>
-
-              <div class="proj-screenshot-caption">
-                // aidflow / multi-agent orchestration / Gemini
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
-    <!-- Mobile projects carousel -->
+    <!-- Mobile: swipeable project showcase -->
     <div class="proj-mobile">
       <div class="proj-carousel-wrapper">
         <div class="proj-carousel-viewport" id="mobileProjCarousel">
           <!-- Slide 1 -->
           <div class="proj-card-mob rv">
-            <span class="section-label" style="margin-bottom:.8rem">01 — Python · XGBoost · Streamlit · APIs</span>
+            <span class="section-label" style="margin-bottom:.8rem">Python · XGBoost · Streamlit · APIs</span>
             <h3
               style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);margin:.6rem 0 .7rem;transition:color .4s">
               Multi-Hazard Disaster Risk Prediction System</h3>
@@ -523,8 +461,7 @@
             </div>
             <p
               style="font-size:.85rem;line-height:1.75;color:var(--ink-soft);font-weight:300;margin-bottom:1rem;transition:color .4s">
-              Multi-hazard AI system using K-Means, XGBoost, and Random Forest models to predict flood and heatwave risk
-              from live weather data and generate localized risk alerts.</p>
+              Real-time flood and heatwave risk assessment using machine learning models and live weather APIs.</p>
             <div class="proj-tags" style="margin-bottom:1rem">
               <span class="mono-tag">K-Means + XGBoost</span>
               <span class="mono-tag">Random Forest</span>
@@ -533,14 +470,20 @@
               <span class="mono-tag">Live Weather APIs</span>
             </div>
             <div style="display:flex;gap:.75rem">
-              <a href="https://github.com/logitechsoumili/Disaster_Risk_Prediction" target="_blank"
-                class="btn-fill">GitHub</a>
+              <a href="https://github.com/logitechsoumili/Disaster_Risk_Prediction" target="_blank" class="btn-fill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                GitHub
+              </a>
               <a href="https://disaster-risk-prediction.streamlit.app" target="_blank" class="btn-outline">Live Demo</a>
             </div>
           </div>
+
           <!-- Slide 2 -->
           <div class="proj-card-mob rv d1">
-            <span class="section-label" style="margin-bottom:.8rem">02 — Python · TensorFlow · Flask · RAG</span>
+            <span class="section-label" style="margin-bottom:.8rem">Python · TensorFlow · Flask · RAG</span>
             <h3
               style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);margin:.6rem 0 .7rem;transition:color .4s">
               Environmental Health Risk &amp; Advisory System</h3>
@@ -549,7 +492,7 @@
                 <div class="ss-dot r"></div>
                 <div class="ss-dot y"></div>
                 <div class="ss-dot g"></div>
-                <span class="ss-url">environmental-health-system.local</span>
+                <span class="ss-url">environment-health-system.local</span>
               </div>
               <div class="ss-placeholder">
                 <img src="assets/environment.png" class="proj-screenshot-img"
@@ -558,8 +501,8 @@
             </div>
             <p
               style="font-size:.85rem;line-height:1.75;color:var(--ink-soft);font-weight:300;margin-bottom:1rem;transition:color .4s">
-              Environmental health advisory system that detects sanitation hazards using EfficientNetB0 and generates
-              disease-risk assessments and preventive guidance through a local LLaMA 3.2 RAG pipeline.</p>
+              CNN + RAG system for detecting disease-associated environmental hazards and generating preventive health
+              advisories.</p>
             <div class="proj-tags" style="margin-bottom:1rem">
               <span class="mono-tag">EfficientNetB0</span>
               <span class="mono-tag">FAISS RAG</span>
@@ -569,13 +512,19 @@
             </div>
             <div style="display:flex;gap:.75rem">
               <a href="https://github.com/logitechsoumili/Environmental_AI_Healthcare_System" target="_blank"
-                class="btn-fill">GitHub</a>
+                class="btn-fill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                GitHub
+              </a>
             </div>
           </div>
+
           <!-- Slide 3 -->
           <div class="proj-card-mob rv d2">
-            <span class="section-label" style="margin-bottom:.8rem">03 — WebSockets · FastAPI · Gemini · Cloud
-              Run</span>
+            <span class="section-label" style="margin-bottom:.8rem">WebSockets · FastAPI · Gemini · Cloud Run</span>
             <h3
               style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);margin:.6rem 0 .7rem;transition:color .4s">
               Cortex Arena: AI Crowd Orchestration System</h3>
@@ -584,7 +533,7 @@
                 <div class="ss-dot r"></div>
                 <div class="ss-dot y"></div>
                 <div class="ss-dot g"></div>
-                <span class="ss-url">cortex.asia-south1.run.app</span>
+                <span class="ss-url">cortex-arena.run.app</span>
               </div>
               <div class="ss-placeholder">
                 <img src="assets/cortex.png" class="proj-screenshot-img"
@@ -593,8 +542,8 @@
             </div>
             <p
               style="font-size:.85rem;line-height:1.75;color:var(--ink-soft);font-weight:300;margin-bottom:1rem;transition:color .4s">
-              Real-time crowd management platform with live congestion monitoring and density prediction. Optimized
-              route planning and attendee AI guidance.</p>
+              AI-powered crowd management platform with congestion monitoring, route optimization, and attendee
+              assistance.</p>
             <div class="proj-tags" style="margin-bottom:1rem">
               <span class="mono-tag">FastAPI</span>
               <span class="mono-tag">WebSockets</span>
@@ -602,15 +551,21 @@
               <span class="mono-tag">Cloud Run</span>
             </div>
             <div style="display:flex;gap:.75rem">
-              <a href="https://github.com/logitechsoumili/CortexArena" target="_blank" class="btn-fill">GitHub</a>
+              <a href="https://github.com/logitechsoumili/CortexArena" target="_blank" class="btn-fill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                GitHub
+              </a>
               <a href="https://cortex-frontend-263130631276.asia-south1.run.app/" target="_blank"
                 class="btn-outline">Live Demo</a>
             </div>
           </div>
+
           <!-- Slide 4 -->
           <div class="proj-card-mob rv d3">
-            <span class="section-label" style="margin-bottom:.8rem">04 — Python · Gemini · Multi-Agent Systems ·
-              GCP</span>
+            <span class="section-label" style="margin-bottom:.8rem">Python · Gemini · Multi-Agent Systems · GCP</span>
             <h3
               style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);margin:.6rem 0 .7rem;transition:color .4s">
               AidFlow: Agentic Volunteer Intelligence System</h3>
@@ -628,8 +583,8 @@
             </div>
             <p
               style="font-size:.85rem;line-height:1.75;color:var(--ink-soft);font-weight:300;margin-bottom:1rem;transition:color .4s">
-              Multi-agent AI system transforming unstructured reports into response plans. Custom pipelines handle
-              entity extraction, classification, and resource matching.</p>
+              Multi-agent disaster response system that transforms reports into actionable volunteer coordination plans.
+            </p>
             <div class="proj-tags" style="margin-bottom:1rem">
               <span class="mono-tag">Gemini</span>
               <span class="mono-tag">Multi-Agent AI</span>
@@ -637,7 +592,13 @@
               <span class="mono-tag">Google Cloud</span>
             </div>
             <div style="display:flex;gap:.75rem">
-              <a href="https://github.com/Rupu-techu/AidFLow" target="_blank" class="btn-fill">GitHub</a>
+              <a href="https://github.com/Rupu-techu/AidFLow" target="_blank" class="btn-fill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                GitHub
+              </a>
               <a href="https://aidflow-ai.vercel.app/" target="_blank" class="btn-outline">Live Demo</a>
             </div>
           </div>
@@ -653,15 +614,7 @@
           </svg>
         </button>
 
-        <div class="carousel-meta">
-          <span class="carousel-counter" id="carouselCounter">01 / 04</span>
-          <div class="carousel-dots" id="carouselDots">
-            <button class="carousel-dot active" data-index="0" aria-label="Go to project 1"></button>
-            <button class="carousel-dot" data-index="1" aria-label="Go to project 2"></button>
-            <button class="carousel-dot" data-index="2" aria-label="Go to project 3"></button>
-            <button class="carousel-dot" data-index="3" aria-label="Go to project 4"></button>
-          </div>
-        </div>
+        <span class="carousel-counter" id="carouselCounter">01 / 04</span>
 
         <button class="carousel-btn next" id="carouselNextBtn" aria-label="Next project">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
