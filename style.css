@@ -849,6 +849,10 @@
       transition: color .4s
     }
 
+    .about-desc-mobile {
+      display: none;
+    }
+
     .about-right {
       display: flex;
       flex-direction: column;
@@ -857,7 +861,7 @@
     }
 
     .about-stat {
-      padding: 1.2rem 0;
+      padding: 1.6rem 0;
       border-bottom: .5px solid var(--divider);
       display: grid;
       grid-template-columns: auto 1fr;
@@ -919,9 +923,11 @@
     }
 
     .skills-groups {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-auto-flow: column;
+      gap: 1.2rem 4rem;
       margin-top: 1.4rem
     }
 
@@ -1947,8 +1953,26 @@
         padding: 4rem 1.5rem
       }
 
+      .about-desc-desktop {
+        display: none;
+      }
+
+      .about-desc-mobile {
+        display: block;
+      }
+
+      .about-stat {
+        padding: 1.2rem 0;
+      }
+
       .skills-wrap {
         padding: 2rem 1.5rem
+      }
+
+      .skills-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
       }
 
       #projects {
