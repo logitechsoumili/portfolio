@@ -973,15 +973,15 @@
     /* sticky showcase layout */
     .proj-showcase {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.25fr;
       position: relative;
     }
 
     /* left: sticky info panel */
     .proj-info-col {
       position: sticky;
-      top: var(--nav-h);
-      height: calc(100vh - var(--nav-h));
+      top: calc(var(--nav-h) + (100vh - var(--nav-h) - 75vh) / 2);
+      height: 75vh;
       display: flex;
       flex-direction: column;
       padding: 3rem 3rem 3rem;
@@ -1004,7 +1004,7 @@
       font-family: var(--mono);
       font-size: .72rem;
       color: var(--muted-lt);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       transition: color .4s
     }
 
@@ -1018,7 +1018,7 @@
       font-weight: 400;
       color: var(--ink);
       line-height: 1.15;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.8rem;
       transition: color .4s
     }
 
@@ -1027,8 +1027,7 @@
       line-height: 1.78;
       color: var(--ink-soft);
       font-weight: 300;
-      margin-bottom: 1.5rem;
-      flex: 1;
+      margin-bottom: 1rem;
       transition: color .4s
     }
 
@@ -1036,7 +1035,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: .35rem;
-      margin-bottom: 1.8rem
+      margin-bottom: 1.2rem
     }
 
     .proj-actions {
@@ -1052,11 +1051,12 @@
     }
 
     .proj-visual-item {
-      min-height: 100vh;
+      min-height: 75vh;
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 3rem;
+      padding: 1.5rem;
       border-bottom: .5px solid var(--divider);
       position: relative;
       transition: border-color .4s;
@@ -1068,6 +1068,8 @@
 
     .proj-screenshot {
       width: 100%;
+      max-width: calc((75vh - 5rem) * 1.6);
+      margin: 0 auto;
       border: .5px solid var(--divider-md);
       background: var(--bg-raised);
       overflow: hidden;
@@ -1097,7 +1099,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 28px;
+      height: var(--ss-bar-h, 28px);
       background: var(--bg-alt);
       border-bottom: .5px solid var(--divider);
       display: flex;
@@ -1142,24 +1144,43 @@
       justify-content: center;
       gap: .8rem;
       background: var(--bg-alt);
-      padding-top: 28px;
+      padding-top: var(--ss-bar-h, 28px);
       transition: background .4s;
+      overflow: hidden;
     }
 
-    .ss-placeholder svg {
-      width: 40px;
-      height: 40px;
-      stroke: var(--divider-str);
-      fill: none;
-      stroke-width: 1;
-      stroke-linecap: round
+    .proj-screenshot-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
     }
 
-    .ss-placeholder-label {
-      font-size: .7rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted-lt)
+    .proj-screenshot-mob-frame {
+      --ss-bar-h: 20px;
+      border: .5px solid var(--divider-md);
+      background: var(--bg-raised);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: 1rem;
+      transition: border-color .4s;
+    }
+
+    .proj-screenshot-mob-frame .ss-bar {
+      padding: 0 .6rem;
+      gap: .3rem;
+    }
+
+    .proj-screenshot-mob-frame .ss-dot {
+      width: 6px;
+      height: 6px;
+    }
+
+    .proj-screenshot-mob-frame .ss-url {
+      font-size: .52rem;
+      margin-left: .3rem;
     }
 
     .proj-screenshot-caption {
