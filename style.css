@@ -1280,7 +1280,7 @@
     }
 
     /* ════════════════════════════════════
-   EXPERIENCE
+   EXPERIENCE — stacked cards
 ════════════════════════════════════ */
     #experience {
       padding: 6rem 3rem;
@@ -1296,98 +1296,145 @@
       margin-top: 1rem
     }
 
-    .exp-list {
+    .exp-cards {
+      max-width: 940px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 0
+      gap: 52px;
     }
 
-    .exp-item {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 2.5rem;
-      padding: 2rem 0;
-      border-bottom: .5px solid var(--divider);
-      transition: border-color .4s;
+    .exp-card {
+      position: relative;
+      background: var(--bg-alt);
+      border: .5px solid var(--divider-md);
+      border-left: 3px solid var(--burgundy);
+      border-radius: 14px;
+      padding: 2.2rem 2.5rem;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease),
+                  background .4s, border-color .4s;
     }
 
-    .exp-item:first-child {
-      border-top: .5px solid var(--divider)
+    .exp-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px var(--shadow), 0 2px 8px var(--shadow);
     }
 
-    .exp-period {
+    .exp-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1rem;
+    }
+
+    .exp-date {
       font-family: var(--mono);
       font-size: .72rem;
       color: var(--muted-lt);
-      padding-top: .2rem;
+      letter-spacing: .04em;
       transition: color .4s;
-      line-height: 1.5
     }
 
-    .exp-period .current {
-      color: var(--burgundy);
-      font-size: .62rem;
-      display: block;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-top: .3rem
-    }
-
-    .exp-content {}
-
-    .exp-role-line {
+    .exp-badges {
       display: flex;
-      align-items: baseline;
-      gap: .8rem;
-      margin-bottom: .3rem;
-      flex-wrap: wrap
+      gap: .4rem;
+      flex-wrap: wrap;
     }
 
-    .exp-co {
-      font-family: var(--serif);
-      font-size: 1.15rem;
+    .exp-badge-pill {
+      font-size: .58rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .2rem .7rem;
+      border-radius: 100px;
+      border: .5px solid var(--divider-md);
+      color: var(--muted-lt);
+      font-family: var(--sans);
       font-weight: 400;
-      color: var(--wine);
-      transition: color .4s
+      transition: border-color .4s, color .4s, background .4s;
     }
 
-    .exp-sep {
-      color: var(--divider-str);
-      font-size: .9rem
+    .exp-badge-pill.current {
+      border-color: var(--burgundy);
+      color: var(--burgundy);
+      background: rgba(117, 22, 45, 0.06);
+    }
+
+    [data-theme="dark"] .exp-badge-pill.current {
+      background: rgba(186, 64, 85, 0.10);
+    }
+
+    .exp-company {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: .25rem;
+      transition: color .4s;
     }
 
     .exp-role {
-      font-size: .8rem;
+      display: block;
+      font-size: .82rem;
       color: var(--muted);
       letter-spacing: .04em;
-      transition: color .4s
-    }
-
-    .exp-badge {
-      font-size: .6rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .15rem .55rem;
-      border: .5px solid var(--divider-md);
-      color: var(--muted-lt);
-      margin-left: .4rem;
-      transition: border-color .4s, color .4s
+      margin-bottom: .8rem;
+      transition: color .4s;
     }
 
     .exp-desc {
       font-size: .85rem;
-      line-height: 1.72;
+      line-height: 1.75;
       color: var(--ink-soft);
       font-weight: 300;
-      margin-top: .7rem;
-      transition: color .4s
+      margin-bottom: 1.1rem;
+      transition: color .4s;
     }
 
     .exp-skills {
       display: flex;
       flex-wrap: wrap;
-      gap: .3rem;
-      margin-top: .8rem
+      gap: .35rem;
+    }
+
+    .exp-card-left,
+    .exp-card-right {
+      display: contents;
+    }
+
+    @media (min-width: 1024px) {
+      .exp-card {
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+        gap: 2.5rem;
+      }
+      .exp-card-left {
+        display: flex;
+        flex-direction: column;
+      }
+      .exp-card-top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 0.8rem;
+      }
+      .exp-company {
+        margin-bottom: 0.25rem;
+      }
+      .exp-role {
+        margin-bottom: 0;
+      }
+      .exp-card-right {
+        display: block;
+      }
+      .exp-desc {
+        margin-bottom: 1.1rem;
+      }
     }
 
     /* ════════════════════════════════════
@@ -2145,10 +2192,13 @@
         padding: 4rem 1.5rem
       }
 
-      .exp-item {
-        grid-template-columns: 1fr;
-        gap: .5rem;
-        padding: 1.5rem 0
+      .exp-cards {
+        gap: 36px;
+      }
+
+      .exp-card {
+        padding: 1.6rem 1.4rem;
+        border-radius: 12px;
       }
 
       #achievements {
