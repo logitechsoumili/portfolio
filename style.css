@@ -55,8 +55,8 @@
       --nav-bg: rgba(18, 4, 6, 0.95);
       --tag-bg: rgba(186, 64, 85, 0.10);
       --code-bg: rgba(186, 64, 85, 0.08);
-      --contact-panel-bg: #2C0F14;
-      --contact-panel-border: rgba(186, 64, 85, 0.15);
+      --contact-panel-bg: #34151B;
+      --contact-panel-border: rgba(186, 64, 85, 0.32);
     }
 
     :root {
@@ -775,6 +775,58 @@
         opacity: 1;
         transform: translateY(0)
       }
+    }
+
+    /* ─── HERO DARK MODE OVERRIDES ─── */
+    [data-theme="dark"] .hero-photo-frame {
+      background: #251618;
+      border-color: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    [data-theme="dark"] .hero-photo-frame::before {
+      background: rgba(238, 228, 208, 0.12);
+      border-color: rgba(255, 255, 255, 0.03);
+    }
+
+    [data-theme="dark"] .hero-photo-frame:hover {
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    [data-theme="dark"] .hero-status span {
+      color: #A38374;
+    }
+
+    [data-theme="dark"] .hero-name .ln {
+      color: #D25D73;
+    }
+
+    [data-theme="dark"] .hero-role {
+      color: #B29182;
+    }
+
+    [data-theme="dark"] .hero-desc {
+      color: #DDD2BF;
+    }
+
+    [data-theme="dark"] .hero-pill {
+      color: #A38374;
+      border-color: rgba(186, 64, 85, 0.25);
+    }
+
+    [data-theme="dark"] .hero-pill.on {
+      color: #D25D73;
+      border-color: #D25D73;
+    }
+
+    [data-theme="dark"] .btn-text {
+      color: #D25D73;
+      border-color: rgba(210, 93, 115, 0.3);
+    }
+
+    [data-theme="dark"] .btn-text:hover {
+      color: var(--burgundy);
+      border-color: var(--burgundy);
     }
 
     /* ─── MARQUEE ─── */
@@ -1669,7 +1721,7 @@
     }
 
     [data-theme="dark"] .contact-heading em {
-      color: var(--burgundy)
+      color: #D25D73;
     }
 
     .contact-sub {
@@ -1683,7 +1735,7 @@
     }
 
     [data-theme="dark"] .contact-sub {
-      color: var(--ink-soft)
+      color: #DDD2BF;
     }
 
     .contact-socials {
@@ -1712,11 +1764,11 @@
     }
 
     [data-theme="dark"] .contact-social-link {
-      color: var(--ink-soft);
+      color: #DDD2BF;
     }
 
     [data-theme="dark"] .contact-social-link:hover {
-      color: var(--burgundy);
+      color: #D25D73;
     }
 
     /* form */
@@ -1744,7 +1796,7 @@
     }
 
     [data-theme="dark"] .c-fg {
-      border-bottom-color: var(--divider)
+      border-bottom-color: rgba(186, 64, 85, 0.28);
     }
 
     .c-fg:focus-within {
@@ -1752,7 +1804,7 @@
     }
 
     [data-theme="dark"] .c-fg:focus-within {
-      border-color: var(--burgundy)
+      border-color: #D25D73;
     }
 
     .c-label {
@@ -1765,7 +1817,7 @@
     }
 
     [data-theme="dark"] .c-label {
-      color: var(--muted-lt)
+      color: #A38374;
     }
 
     .c-fg:focus-within .c-label {
@@ -1773,7 +1825,7 @@
     }
 
     [data-theme="dark"] .c-fg:focus-within .c-label {
-      color: var(--burgundy)
+      color: #D25D73;
     }
 
     .c-input,
@@ -1802,7 +1854,7 @@
 
     [data-theme="dark"] .c-input::placeholder,
     [data-theme="dark"] .c-ta::placeholder {
-      color: var(--muted)
+      color: #8F7264;
     }
 
     .c-ta {
@@ -1828,8 +1880,9 @@
     }
 
     [data-theme="dark"] .c-submit {
-      color: var(--muted-lt);
-      border-color: var(--divider)
+      color: #DDD2BF;
+      border-color: rgba(186, 64, 85, 0.35);
+      background: rgba(186, 64, 85, 0.08);
     }
 
     .c-submit:hover {
@@ -1840,9 +1893,9 @@
     }
 
     [data-theme="dark"] .c-submit:hover {
-      background: var(--bg-alt);
-      color: var(--ink);
-      border-color: var(--burgundy)
+      background: rgba(186, 64, 85, 0.16);
+      color: #EEE4D0;
+      border-color: #D25D73;
     }
 
     .c-arr {
@@ -1861,7 +1914,7 @@
     }
 
     [data-theme="dark"] .c-note {
-      color: var(--muted-lt)
+      color: #A38374;
     }
 
     /* ─── FOOTER ─── */
@@ -1890,6 +1943,18 @@
       color: var(--muted-lt);
       font-size: .65rem;
       letter-spacing: .06em
+    }
+
+    [data-theme="dark"] footer {
+      background: #100305;
+      border-top: 1px solid rgba(186, 64, 85, 0.22);
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    [data-theme="dark"] footer p,
+    [data-theme="dark"] .footer-built {
+      color: #A38374;
     }
 
     /* ─── SCROLLBAR ─── */
