@@ -97,4 +97,89 @@
       const bod = encodeURIComponent((n ? 'Name: ' + n + '\n' : '') + (e ? 'Email: ' + e + '\n' : '') + (m ? '\nMessage:\n' + m : ''));
       window.location.href = 'mailto:logitechsoumili@gmail.com?subject=' + sub + '&body=' + bod;
     });
+
+    /* ── mobile project carousel ── */
+    const carousel = document.getElementById('mobileProjCarousel');
+    const prevBtn = document.getElementById('carouselPrevBtn');
+    const nextBtn = document.getElementById('carouselNextBtn');
+    const counter = document.getElementById('carouselCounter');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    if (carousel && prevBtn && nextBtn && counter) {
+      const totalSlides = dots.length;
+
+      const updateCarousel = (index) => {
+        // Update counter
+        counter.textContent = `0${index + 1} / 0${totalSlides}`;
+        
+        // Update dots
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === index);
+        });
+
+        // Update button disabled state
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === totalSlides - 1;
+      };
+
+      // Listen for scroll events to update indicators dynamically
+      let isScrolling;
+      carousel.addEventListener('scroll', () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+          const width = carousel.clientWidth;
+          if (width > 0) {
+            const index = Math.round(carousel.scrollLeft / width);
+            if (index >= 0 && index < totalSlides) {
+              updateCarousel(index);
+            }
+          }
+        }, 50); // Small timeout to debounce scroll update
+      }, { passive: true });
+
+      // Arrow button click handlers
+      prevBtn.addEventListener('click', () => {
+        const width = carousel.clientWidth;
+        if (width > 0) {
+          const index = Math.round(carousel.scrollLeft / width);
+          if (index > 0) {
+            carousel.scrollTo({
+              left: (index - 1) * width,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        const width = carousel.clientWidth;
+        if (width > 0) {
+          const index = Math.round(carousel.scrollLeft / width);
+          if (index < totalSlides - 1) {
+            carousel.scrollTo({
+              left: (index + 1) * width,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+
+      // Pagination dots click handlers
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const width = carousel.clientWidth;
+          if (width > 0) {
+            const index = parseInt(dot.getAttribute('data-index'), 10);
+            carousel.scrollTo({
+              left: index * width,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Initial state setup
+      updateCarousel(0);
+    }
+
   

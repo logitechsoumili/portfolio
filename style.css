@@ -2017,11 +2017,116 @@
 
       .proj-mobile {
         display: block;
-        padding: 0 1.5rem
+        padding: 0 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .proj-carousel-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: .5px solid var(--divider);
+      }
+
+      .proj-carousel-viewport {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        gap: 0;
+        scrollbar-width: none;
+      }
+
+      .proj-carousel-viewport::-webkit-scrollbar {
+        display: none;
       }
 
       .proj-card-mob {
-        padding: 2rem 0
+        flex: 0 0 100%;
+        width: 100%;
+        scroll-snap-align: center;
+        box-sizing: border-box;
+        padding: 2rem 0;
+        border-bottom: none;
+      }
+
+      .proj-carousel-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1.5rem 0 1rem;
+      }
+
+      .carousel-btn {
+        background: transparent;
+        border: .5px solid var(--divider-md);
+        color: var(--muted);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color .3s, color .3s;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .carousel-btn:hover, .carousel-btn:focus {
+        border-color: var(--burgundy);
+        color: var(--burgundy);
+      }
+
+      .carousel-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      .carousel-btn svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        fill: none;
+      }
+
+      .carousel-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .carousel-counter {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--muted-lt);
+        letter-spacing: 0.05em;
+        line-height: 1;
+      }
+
+      .carousel-dots {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .carousel-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--divider-str);
+        border: none;
+        padding: 0;
+        transition: background .3s, transform .3s;
+        cursor: pointer;
+      }
+
+      .carousel-dot.active {
+        background: var(--burgundy);
+        transform: scale(1.2);
       }
 
       #academic {
