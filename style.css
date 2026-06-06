@@ -142,6 +142,23 @@
       transform: translate(-50%, -50%) scale(.5)
     }
 
+    /* ─── HIDE CUSTOM CURSOR ON TOUCH / MOBILE ─── */
+    @media (pointer: coarse) {
+      body,
+      a,
+      button,
+      input,
+      textarea,
+      select {
+        cursor: auto;
+      }
+
+      #cur,
+      #cur-r {
+        display: none !important;
+      }
+    }
+
     /* ─── NAVIGATION ─── */
     nav#main-nav {
       position: fixed;
