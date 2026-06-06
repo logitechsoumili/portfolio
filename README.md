@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="[PORTFOLIO_URL]" target="_blank" rel="noopener noreferrer">
+  <a href="https://soumilisaha.vercel.app/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Live_Website-View_Site-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Website" />
   </a>
 </p>
@@ -61,7 +61,7 @@ portfolio/
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/logitechsoumili/portfolio.git
 ```
 
 Navigate into the project directory:
