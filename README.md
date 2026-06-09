@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://soumilisaha.vercel.app/" target="_blank" rel="noopener noreferrer">
+  <a href="https://soumili.is-a.dev/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Live_Website-View_Site-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Website" />
   </a>
 </p>
